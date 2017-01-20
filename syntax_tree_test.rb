@@ -14,6 +14,16 @@ class SyntaxTreeTest < Minitest::Test
     assert_equal tree.compute, 6
   end
 
+  def test_times
+    tree = SyntaxTree.new(root: "times", left: 3, right: 4)
+    assert_equal tree.compute, 12
+  end
+
+  def test_times2
+    tree = SyntaxTree.new(root: "times", left: 2, right: 5)
+    assert_equal tree.compute, 10
+  end
+
   def test_puts_2
     skip
     tree = SyntaxTree.new(root: "plus", left: "3", right: Tree.new(root: "plus", left: "1", right: "1"))
