@@ -12,7 +12,7 @@ class SyntaxTree
     if @root == "plus"
       left_value + right_value
     elsif @root == "times"
-      @left * @right
+      left_value * right_value
     end
   end
 
