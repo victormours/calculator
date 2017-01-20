@@ -35,7 +35,6 @@ class SyntaxTreeTest < Minitest::Test
   end
 
   def test_both_nested_trees
-    skip
     tree = SyntaxTree.new(root: "plus",
                           left: SyntaxTree.new(root: "plus", left: 1, right: 2),
                           right: SyntaxTree.new(root: "plus", left: 4, right: 3))
