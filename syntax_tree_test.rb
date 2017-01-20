@@ -24,9 +24,22 @@ class SyntaxTreeTest < Minitest::Test
     assert_equal tree.compute, 10
   end
 
-  def test_puts_2
+  def test_nested_tree
     tree = SyntaxTree.new(root: "plus", left: 3, right: SyntaxTree.new(root: "plus", left: 1, right: 1))
     assert_equal tree.compute, 5
+  end
+
+  def test_nested_tree2
+    tree = SyntaxTree.new(root: "plus", left: SyntaxTree.new(root: "plus", left: 1, right: 1), right: 3)
+    assert_equal tree.compute, 5
+  end
+
+  def test_both_nested_trees
+    skip
+    tree = SyntaxTree.new(root: "plus",
+                          left: SyntaxTree.new(root: "plus", left: 1, right: 2),
+                          right: SyntaxTree.new(root: "plus", left: 4, right: 3))
+    assert_equal tree.compute, 10
   end
 
 end
