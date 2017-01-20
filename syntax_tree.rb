@@ -1,3 +1,5 @@
+require "pry"
+
 class SyntaxTree
 
   def initialize(root:, left:, right:)
@@ -7,7 +9,7 @@ class SyntaxTree
   end
 
   def compute
-
+    @left + @right
   end
 
 end
