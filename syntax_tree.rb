@@ -9,7 +9,15 @@ class SyntaxTree
   end
 
   def compute
-    @left + @right
+    if @root == "plus"
+      if @right.class == Fixnum
+        @left + @right
+      elsif @right.class == SyntaxTree
+        @left + @right.compute
+      end
+    elsif @root == "times"
+      @left * @right
+    end
   end
 
 end

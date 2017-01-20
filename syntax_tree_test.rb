@@ -25,8 +25,7 @@ class SyntaxTreeTest < Minitest::Test
   end
 
   def test_puts_2
-    skip
-    tree = SyntaxTree.new(root: "plus", left: "3", right: Tree.new(root: "plus", left: "1", right: "1"))
+    tree = SyntaxTree.new(root: "plus", left: 3, right: SyntaxTree.new(root: "plus", left: 1, right: 1))
     assert_equal tree.compute, 5
   end
 
